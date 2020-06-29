@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+:root {
+  --gunmetal : #293035;
+  --tearose : #E7C2C5;
+  --pblue : #ACCAFF;
+  --sgray : #74828D;
+  --mint : #93FFB0;
+}
+
+body{
+  font-family: 'Nanum Gothic Coding', monospace,
+  'Lexend Deca',
+  arial,
+  sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
