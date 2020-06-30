@@ -71,7 +71,8 @@ export class DataService {
     {headers: {
       Authorization: "JWT " + this.login.getToken(),
       Username: username
-    }})
+    }}
+  )
   }
 
   getReceiverUser(id):Observable<string[]>{
@@ -80,7 +81,8 @@ export class DataService {
     {headers: {
       Authorization: "JWT " + this.login.getToken(),
       Username: username
-    }})
+    }}
+  )
   }
 
   sendMessage(messagecontent, receiver, id):Observable<string>{
@@ -95,4 +97,3 @@ export class DataService {
   }
 
 }
-

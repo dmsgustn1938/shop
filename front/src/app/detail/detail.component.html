@@ -1,7 +1,7 @@
 <div class="container">
   <div class="navbar">
     <i class="fas fa-arrow-left" routerLink="../"></i>
-    <p routerLink="/../../category">Wyverns shop</p>
+    <p routerLink="/../../category">micro shop</p>
     <i class="fas fa-bars login-nav" (click)="menuclick()"></i>
   </div>
   <div class="slidemenu" [style.display]="menustat">
@@ -9,11 +9,9 @@
       <li class="loginbtn" [style.display]="loginbtnActive" routerLink="../../../login"><h4> > 로그인</h4></li>
       <li class="dashboard" [style.display]="dashActive" routerLink="../../../dashboard"><h4> > DASHBOARD</h4></li>
       <li routerLink="../../../"><h4> > 홈으로</h4></li>
-      <li routerLink="../../Uniform"><h4> > 유니폼</h4></li>
-      <li routerLink="../../Accessory"><h4> > 악세사리</h4></li>
-      <li routerLink="../../Wear"><h4> > 의류</h4></li>
-
-
+      <li routerLink="../../uniform"><h4> > 유니폼</h4></li>
+      <li routerLink="../../aceesory"><h4> > 악세사리</h4></li>
+      <li routerLink="../../wear"><h4> > 의류</h4></li>
     </ul>
   </div>
   <div class="label">{{detail.name}}</div>

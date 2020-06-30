@@ -10,3 +10,11 @@ li{
   list-style: none;
   font-size: 20px;
 }
+@media(min-width:426px){
+  h2{
+    font-size: 45px;
+  }
+  ul>*{
+    font-size: 30px;
+  }
+}

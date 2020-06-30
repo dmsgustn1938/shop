@@ -41,3 +41,22 @@ p{
 .selected{
   background-color: #7b84d4;
 }
+@media(min-width:426px){
+  .container{
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .navbar>p, .navbar>i{
+    font-size: 45px;
+  }
+  .board{
+    max-width: 1024px;
+  }
+  .board-menu{
+    height: 100px;
+    width: 100px;
+  }
+  .board-menu>i{
+    font-size: 45px;
+  }
+}
