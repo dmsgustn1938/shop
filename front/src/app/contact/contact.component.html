@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="navbar">
+    <i class="fas fa-arrow-left" routerLink="../"></i>
+    <p routerLink="../">메시지 보내기</p>
+  </div>
+  <div class="outline">
+    <ul>
+      <div class="message-form">
+        <div class="btn-sender-box">
+          <select>
+            <option #recevier *ngFor="let user of receiver" value={{user}} label="{{user}}"></option>
+          </select>
+          <button (click)="sendMessage(messagecontent, receiver)">보내기</button>
+        </div>
+
+        <textarea #messagecontent placeholder="메시지를 작성해주세요(최대 300자)"></textarea>
+        <hr>
+
+      </div>
+
+      <li *ngFor="let message of messages" [class.selected]="message.recent_msg">
+        <div class="message-info">
+          <h4>@{{message.real_estate}}({{message.sender}})</h4>
+        </div>
+        <div class="message-contents">
+          <h5>{{message.message}}</h5>
+        </div>
+        <h5 class="date">{{message.send_time | date: 'medium'}}</h5>
+      </li>
+    </ul>
+  </div>
+</div>

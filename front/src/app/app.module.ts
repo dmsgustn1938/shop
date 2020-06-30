@@ -9,13 +9,23 @@ import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessageComponent } from './message/message.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
 
 import { HttpClientModule } from '@angular/common/http'; //for http
 import { JwtModule } from '@auth0/angular-jwt'; //for JWT
 import { AuthGuard } from './auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 export function tokenGetter(){
   return localStorage.getItem('access_token')
+}
+
+export class MENU{
+  name:string;
+  icon:string;
 }
 
 @NgModule({
@@ -27,6 +37,9 @@ export function tokenGetter(){
     DetailComponent,
     LoginComponent,
     SignupComponent,
+    DashboardComponent,
+    MessageComponent,
+    UserinfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +50,7 @@ export function tokenGetter(){
         tokenGetter: tokenGetter,
         whitelistedDomains: ['api-token-auth'],
       }
-    })
+    }), BrowserAnimationsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

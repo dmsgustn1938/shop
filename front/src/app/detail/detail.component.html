@@ -1,2 +1,42 @@
-<p>micro shop</p>
+<div class="container">
+  <div class="navbar">
+    <i class="fas fa-arrow-left" routerLink="../"></i>
+    <p routerLink="/../../category">Wyverns shop</p>
+    <i class="fas fa-bars login-nav" (click)="menuclick()"></i>
+  </div>
+  <div class="slidemenu" [style.display]="menustat">
+    <ul>
+      <li class="loginbtn" [style.display]="loginbtnActive" routerLink="../../../login"><h4> > 로그인</h4></li>
+      <li class="dashboard" [style.display]="dashActive" routerLink="../../../dashboard"><h4> > DASHBOARD</h4></li>
+      <li routerLink="../../../"><h4> > 홈으로</h4></li>
+      <li routerLink="../../Uniform"><h4> > 유니폼</h4></li>
+      <li routerLink="../../Accessory"><h4> > 악세사리</h4></li>
+      <li routerLink="../../Wear"><h4> > 의류</h4></li>
+
+
+    </ul>
+  </div>
+  <div class="label">{{detail.name}}</div>
+  <div class="detailimage" [ngStyle]="{ 'background-image': 'url(' + detail.image + ')'}">
+  </div>
+  <div class="detailinfo">
+    <div class="upperinfo">
+      <div class="like">
+        <i class="far fa-heart" [class.fas]="detail.LikeUser.includes(user_id)" (click)="recommand()"></i>
+        {{detail.likecount}}명이 좋아합니다
+      </div>
+      <div class="price">USD {{detail.price}} K</div>
+    </div>
+    <div class="ask">
+      <button class="ask" routerLink="contact">판매자와 연락하기</button>
+    </div>
+    <ul>
+      <li class="detail">{{detail.detail}}</li>
+      <li>매도인 : {{detail.owner}}</li>
+      <li>Address : {{detail.address}}</li>
+      <li>등록일 : {{detail.upload_date | date:short}}</li>
+    </ul>
+  </div>
+</div>
+
 

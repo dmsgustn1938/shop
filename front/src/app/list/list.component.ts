@@ -9,21 +9,34 @@ import { DataService } from '../data.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  datalist: string[];
-  category: string;
+
+  datalist : string[];
+  category : string;
+  sort : string;
+  init_sort : string = "recommand";
 
   constructor(
     private route:ActivatedRoute,
     private data:DataService
   ) { }
+
   ngOnInit() {
-    this.getData()
+    this.getData(this.init_sort)
   }
-  getData(){
+
+  getData(sort){
     this.category = this.route.snapshot.paramMap.get('category')
-    this.data.getlist(this.category).subscribe(
+    if(sort == this.sort){
+      this.sort = "-" + this.sort;
+    }
+    else{
+      this.sort = sort;
+    }
+
+    this.data.getlist(this.category, this.sort).subscribe(
       response=> this.datalist = response
     )
   }
+
 }
 

@@ -70,14 +70,30 @@ class Category(models.Model):
 class Real_estate(models.Model):
     name = models.CharField(max_length=40, null=False)
     detail = models.TextField(max_length=300, null=False)
-    image = models.ImageField(blank=True)  #나중에 blank=False로 수정
+    image = models.ImageField(blank=True)
     price = models.IntegerField(default=0)
     upload_date = models.DateTimeField(default=timezone.now) #timezone import
     category = models.ForeignKey(Category, null=False, on_delete=models.CASCADE)
     address = models.TextField(max_length=300, null=False)
-    like = models.IntegerField(default=0)
+    likecount = models.IntegerField(default=0)
+    owner = models.ForeignKey(MyUser, null=False, on_delete=models.CASCADE)
+
+    LikeUser = models.ManyToManyField(MyUser, blank=True, related_name="LikeUser", through="Like", through_fields=('realestate_post','user'))
     def __str__(self):
         return self.name
 
+class Like(models.Model):
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    realestate_post = models.ForeignKey(Real_estate, on_delete=models.CASCADE)
+
+class Message(models.Model):
+    sender = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name="sender")
+    receiver = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name="receiver")
+    real_estate = models.ForeignKey(Real_estate, on_delete=models.CASCADE)
+    message = models.TextField(max_length= 300, null=False)
+    send_time = models.DateTimeField(default= timezone.now)
+    recent_msg = models.BooleanField(default=False)
+    def __str__(self):
+        return ("[{0}]{1} -> {2}(@{3})").format(self.recent_msg, self.sender, self.receiver, self.real_estate)
 
 

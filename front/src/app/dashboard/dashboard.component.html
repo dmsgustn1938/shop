@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="navbar">
+    <i class="fas fa-arrow-left" routerLink="../"></i>
+    <p>Dashboard</p>
+    <i class="fas fa-bars login-nav" (click)="menuclick()"></i>
+  </div>
+</div>
+<div class="board">
+  <div class="board-menu" *ngFor="let menu of menu" [class.selected]="menu===selectedMenu">
+    <i class={{menu.icon}} routerLink={{menu.name}} (click)="selectMenu(menu)"></i>
+  </div>
+</div>
+<router-outlet></router-outlet>

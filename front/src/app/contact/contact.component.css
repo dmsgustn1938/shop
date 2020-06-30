@@ -1,0 +1,103 @@
+.container{
+  margin: 0;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  margin: 0;
+}
+.navbar>i{
+  font-size: 20px;
+  margin: 0;
+}
+p{
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 800;
+}
+ul{
+  padding: 0 15px;
+  width: 100%;
+  margin: 0;
+}
+li{
+  list-style: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 3px;
+  word-break: break-all;
+}
+.message-info{
+  display: flex;
+  color: #777;
+}
+.message-info>h4{
+  width: 100%;
+  margin: 0;
+  font-weight: 300;
+  flex: 2.5;
+}
+.message-info>h5{
+  margin: 0;
+  flex: 1;
+  font-weight: 300;
+}
+.message-contents>h5{
+  margin: 5px 0;
+}
+.date{
+  margin: 0;
+  text-align: right;
+  color: #ccc;
+}
+.selected{
+  background-color: #f9ffa3;
+}
+.send{
+  position: fixed;
+  margin: 0;
+  padding: 0;
+}
+.send{
+  position: fixed !important;
+  z-index:3;
+  bottom: 40px;
+  right: 10px;
+}
+.send>i{
+  font-size: 45px;
+  color: #555;
+}
+.outline{
+  display: flex;
+  margin: 0;
+}
+.message-form{
+  margin: 0;
+  padding: 0;
+}
+.btn-sender-box{
+  display: flex;
+  justify-content: space-between;
+}
+textarea{
+  margin: 10px 0;
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  border: 0;
+  background-color: #ddd;
+  box-sizing: border-box;
+}
+button{
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+}
+select{
+  height: 30px;
+}
