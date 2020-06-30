@@ -19,6 +19,8 @@ export class DataService {
   getlist(category):Observable<string[]>{
     return this.http.get<string[]>('/api/realestate/'+category)
   }
+
+  getdetail(id):Observable<string[]>{
+    return this.http.get<string[]>('/api/realestate/'+id)
+  }
 }
-
-

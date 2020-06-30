@@ -10,4 +10,10 @@ class RS_Serializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url= True)
     class Meta:
         model = Real_estate
+        fields = ('id','name','detail','image','price','category','like')
+
+class RS_detail_Serializer(serializers.ModelSerializer):
+    image = serializers.ImageField(use_url= True)
+    class Meta:
+        model = Real_estate
         fields = '__all__'

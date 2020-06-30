@@ -3,7 +3,12 @@ from django.urls import path
 from django.conf.urls import url
 from myshop import views
 from rest_framework_jwt.views import obtain_jwt_token
+from myshop.models import Real_estate
+
+from django.conf import settings
 from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,7 +18,9 @@ urlpatterns = [
     url(r'^api/realestate/Uniform/$', views.Uniform.as_view(), name="Uniform"),
     url(r'^api/realestate/Wear/$', views.Wear.as_view(), name="Wear"),
     url(r'^api/realestate/Accessory/$', views.Accessory.as_view(), name="Accessory"),
-] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+    url(r'^api/realestate/(?P<id>\d+)/$', views.Detail.as_view(), name="Detail"),
+    url(r'^api/signup/$', views.Signup.as_view(), name="signup"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 

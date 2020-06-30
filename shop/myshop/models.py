@@ -74,6 +74,8 @@ class Real_estate(models.Model):
     price = models.IntegerField(default=0)
     upload_date = models.DateTimeField(default=timezone.now) #timezone import
     category = models.ForeignKey(Category, null=False, on_delete=models.CASCADE)
+    address = models.TextField(max_length=300, null=False)
+    like = models.IntegerField(default=0)
     def __str__(self):
         return self.name
 
