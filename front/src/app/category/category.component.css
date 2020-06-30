@@ -1,0 +1,30 @@
+.category-content{
+  height: 500vh;
+}
+.category-label{
+  text-align: center;
+  font-weight: 900;
+  font-size: 50px;
+  color: #000000;
+  margin: 0;
+  padding-top: 200px;
+  margin-bottom: 20px;
+}
+.category-button{
+  text-align: center;
+}
+button{
+  height: 50px;
+  width : 250px;
+  margin-top : 20px;
+  border: 0;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000 ;
+  background-color: #FF0033;
+}
+button.introduction{
+  background-color: #FF0033 !important;
+}
+

@@ -134,3 +134,6 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL='myshop.MyUser'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

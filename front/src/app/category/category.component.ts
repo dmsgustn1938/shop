@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  goUniform(){
+    this.router.navigate(['../list/Uniform'])
+  }
+  goAccessory(){
+    this.router.navigate(['../list/Accessory'])
+  }
+  goWear(){
+    this.router.navigate(['../list/Wear'])
   }
 
 }
+
+

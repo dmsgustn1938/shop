@@ -25,5 +25,30 @@ class RS_ViewSet(APIView):
         serializer = RS_Serializer(queryset, many=True)
         return Response(serializer.data)
 
+class Uniform(APIView):
+    authentication_classes = []
+    permission_classes = []
+    def get(self, request, format=None):
+        queryset = Real_estate.objects.filter(category__name="유니폼")
+        serializer = RS_Serializer(queryset, many=True)
+        return Response(serializer.data)
+
+class Accessory(APIView):
+    authentication_classes = []
+    permission_classes = []
+    def get(self, request, format=None):
+        queryset = Real_estate.objects.filter(category__name="악세사리")
+        serializer = RS_Serializer(queryset, many=True)
+        return Response(serializer.data)
+
+class Wear(APIView):
+    authentication_classes = []
+    permission_classes = []
+    def get(self, request, format=None):
+        queryset = Real_estate.objects.filter(category__name="의류")
+        serializer = RS_Serializer(queryset, many=True)
+        return Response(serializer.data)
+
+
 
 
