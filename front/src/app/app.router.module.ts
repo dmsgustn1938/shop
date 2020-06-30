@@ -1,4 +1,3 @@
-
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { CategoryComponent } from './category/category.component';
@@ -12,7 +11,6 @@ import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { AuthGuard } from './auth.guard';
-
 
 const AppRoutes: Routes = [
   {path:'', component: MainComponent, pathMatch:'full'},

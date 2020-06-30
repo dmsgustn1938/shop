@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageComponent } from './message/message.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
+import { ContactComponent } from './contact/contact.component';
 
 import { HttpClientModule } from '@angular/common/http'; //for http
 import { JwtModule } from '@auth0/angular-jwt'; //for JWT
@@ -40,6 +41,7 @@ export class MENU{
     DashboardComponent,
     MessageComponent,
     UserinfoComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

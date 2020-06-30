@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { MENU } from '../app.module'
@@ -26,9 +27,12 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.selectedMenu)
   }
 
   selectMenu(menu){
-    this.selectedMenu = menu
+    this.selectedMenu = menu;
+    console.log("selectedMenu:",this.selectedMenu)
+    console.log("menu", this.menu)
   }
 }

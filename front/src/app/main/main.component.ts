@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+
+//for router
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +11,13 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
- constructor(
-    private router:Router
+  constructor(
+    private router:Router,
+    private data:DataService
   ) { }
 
   ngOnInit() {
+
   }
 
   start() {
@@ -20,6 +25,3 @@ export class MainComponent implements OnInit {
   }
 
 }
-
-
-

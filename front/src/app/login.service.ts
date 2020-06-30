@@ -18,7 +18,11 @@ export class LoginService {
 
   obtain_token(credential){
     return this.http.post<string>('api-token-auth/', credential)
-      .pipe(tap(res=> this.setToken(res['token'])))
+      .pipe(tap(res=>
+        {
+          this.setToken(res['token'])
+        }
+      ))
   }
   setToken(token){
     localStorage.setItem(this.token_name, token)

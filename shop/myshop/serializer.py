@@ -9,13 +9,13 @@ class CateSerializer(serializers.ModelSerializer):
 class User_serializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = '__all__'
+        fields = ('email','name')
 
 class RS_Serializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url= True)
     class Meta:
         model = Real_estate
-        fields = '__all__'
+        fields = ('id','name','detail','image','price','category','likecount')
 
 class RS_detail_Serializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url= True)
@@ -29,6 +29,21 @@ class RS_detail_Serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class Message_Serializer(serializers.ModelSerializer):
+    sender = serializers.SlugRelatedField(
+        many = False,
+        read_only = True,
+        slug_field='email'
+    )
+    receiver = serializers.SlugRelatedField(
+        many = False,
+        read_only = True,
+        slug_field='email'
+    )
+    real_estate = serializers.SlugRelatedField(
+        many = False,
+        read_only = True,
+        slug_field='name'
+    )
     class Meta:
         model = Message
         fields = '__all__'

@@ -21,7 +21,6 @@ export class DetailComponent implements OnInit {
   loginbtnActive: string ="flex";
   dashActive: string = "none";
 
-
   constructor(
     private data:DataService,
     private route:ActivatedRoute,
@@ -42,7 +41,8 @@ export class DetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')
     this.data.getdetail(this.id).subscribe(
       response => {
-        this.detail = response
+      console.log(response)
+      this.detail = response
       }
     )
     this.user_id = this.jwtHelper.decodeToken(this.login.getToken())['user_id']
