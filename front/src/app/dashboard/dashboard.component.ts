@@ -11,6 +11,7 @@ import { MENU } from '../app.module'
 export class DashboardComponent implements OnInit {
 
   selectedMenu:MENU;
+  menustat: string="none";
 
   menu:MENU[] = [
     {name : "logout" , icon : "fas fa-sign-out-alt"},
@@ -27,6 +28,15 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.selectedMenu)
+  }
+
+  menuclick(){
+    if(this.menustat=="none"){
+      this.menustat = "block"
+    }
+    else{
+      this.menustat = "none"
+    }
   }
 
   selectMenu(menu){

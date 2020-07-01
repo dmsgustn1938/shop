@@ -24,6 +24,9 @@ export class CategoryComponent implements OnInit {
   goWear(){
     this.router.navigate(['../list/Wear'])
   }
+  gologin(){
+    this.router.navigate(["login"])
+  }
 
 }
 

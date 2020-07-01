@@ -51,6 +51,7 @@ def Real_estate_order(request, queryset):
 class Uniform(APIView):
     authentication_classes = []
     permission_classes = []
+
     def get(self, request, format=None):
         queryset = Real_estate.objects.filter(category__name="유니폼")
 
@@ -62,6 +63,8 @@ class Uniform(APIView):
 class Accessory(APIView):
     authentication_classes = []
     permission_classes = []
+
+
     def get(self, request, format=None):
         queryset = Real_estate.objects.filter(category__name="악세사리")
 
@@ -73,6 +76,7 @@ class Accessory(APIView):
 class Wear(APIView):
     authentication_classes = []
     permission_classes = []
+
     def get(self, request, format=None):
         queryset = Real_estate.objects.filter(category__name="의류")
 
@@ -84,6 +88,7 @@ class Wear(APIView):
 class Detail(APIView):
     authentication_classes = []
     permission_classes = []
+
     def get(self, request, id, format=None):
         queryset = Real_estate.objects.get(id = id)
         serializer = RS_detail_Serializer(queryset, many = False)
@@ -92,6 +97,7 @@ class Detail(APIView):
 class Signup(APIView):
     authentication_classes = []
     permission_classes = []
+
     def post(self, request, format=None):
         if MyUser.objects.filter(email = request.data['username']).count() >= 1:
             return Response("email Error")

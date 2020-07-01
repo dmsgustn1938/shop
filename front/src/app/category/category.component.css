@@ -1,13 +1,9 @@
-.category-content{
-  height: 500vh;
-}
 .category-label{
   text-align: center;
   font-weight: 900;
-  font-size: 50px;
-  color: #000000;
+  color: var(--sgray);
   margin: 0;
-  padding-top: 200px;
+  padding-top: 30px;
   margin-bottom: 20px;
 }
 .category-button{
@@ -21,10 +17,8 @@ button{
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
-  color: #000000 ;
-  background-color: #FF0033;
+  color: var(--sgray);
+  background-color: var(--tearose);
 }
-button.introduction{
-  background-color: #FF0033 !important;
-}
+
 

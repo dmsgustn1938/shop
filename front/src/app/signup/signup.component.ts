@@ -36,6 +36,9 @@ export class SignupComponent implements OnInit {
       alert("입력된 두 비밀번호가 일치하지 않습니다")
     }
   }
-
-
+  home() {
+    this.router.navigate([''])
+  }
 }
+
+

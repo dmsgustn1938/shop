@@ -9,7 +9,9 @@ import { DataService } from '../data.service';
 })
 export class ContactComponent implements OnInit {
 
-  id:string;
+
+
+id:string;
   messages:string[];
   receiver:string[];
 
@@ -28,6 +30,7 @@ export class ContactComponent implements OnInit {
     this.data.getDetailMessage(this.id).subscribe(
       response=> this.messages=response
     )
+
     this.data.getReceiverUser(this.id).subscribe(
       response=> {
         this.receiver=response

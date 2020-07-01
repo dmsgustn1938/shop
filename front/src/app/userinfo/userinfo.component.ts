@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class UserinfoComponent implements OnInit {
 
   token: string;
-  userinfo: string[];
+  userinfo: any;
 
   constructor(
     private login:LoginService,

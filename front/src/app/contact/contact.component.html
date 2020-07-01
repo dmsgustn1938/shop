@@ -10,7 +10,7 @@
           <select>
             <option #recevier *ngFor="let user of receiver" value={{user}} label="{{user}}"></option>
           </select>
-          <button (click)="sendMessage(messagecontent, receiver)">보내기</button>
+          <button (click)="sendMessage(messagecontent, receiver, id)">보내기</button>
         </div>
 
         <textarea #messagecontent placeholder="메시지를 작성해주세요(최대 300자)"></textarea>

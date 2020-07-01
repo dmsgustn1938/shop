@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,12 @@ import { Location } from '@angular/common';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(
+
+
+constructor(
     private Login:LoginService,
     private location:Location,
+    private router:Router,
   ) { }
 
   ngOnInit() {
@@ -27,5 +31,9 @@ export class LoginComponent implements OnInit {
         },
         response=> alert("다시 시도해주세요")
       )
+}
+  signup() {
+    this.router.navigate(["signup"])
   }
+
 }

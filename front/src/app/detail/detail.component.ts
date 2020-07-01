@@ -14,7 +14,7 @@ import { of } from 'rxjs'
 export class DetailComponent implements OnInit {
 
   id: string;
-  detail: string[];
+  detail: any;
   user_id: string;
   likeuser: string[];
   menustat: string="none";
@@ -27,6 +27,7 @@ export class DetailComponent implements OnInit {
     private router:Router,
     private login:LoginService,
     private jwtHelper:JwtHelperService,
+
   )
   {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false
@@ -41,7 +42,8 @@ export class DetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')
     this.data.getdetail(this.id).subscribe(
       response => {
-        this.detail = response
+        console.log(response)
+        this.detail = response ;
       }
     )
     this.user_id = this.jwtHelper.decodeToken(this.login.getToken())['user_id']
