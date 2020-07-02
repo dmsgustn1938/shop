@@ -1,7 +1,8 @@
 .category-label{
   text-align: center;
   font-weight: 900;
-  color: var(--sgray);
+  font-size : 40px;
+  color: #000000;
   margin: 0;
   padding-top: 30px;
   margin-bottom: 20px;
@@ -17,8 +18,8 @@ button{
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
-  color: var(--sgray);
-  background-color: var(--tearose);
+  color: #000000;
+  background-color: #FF0000;
 }
 
 

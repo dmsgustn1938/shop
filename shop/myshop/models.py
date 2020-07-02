@@ -66,7 +66,7 @@ class Category(models.Model):
 class Real_estate(models.Model):
     name = models.CharField(max_length=40, null=False)
     detail = models.TextField(max_length=300, null=False)
-    image = models.ImageField(blank=True)
+    image = models.ImageField(blank=False)
     price = models.IntegerField(default=0)
     upload_date = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, null=False, on_delete=models.CASCADE)
@@ -92,4 +92,10 @@ class Message(models.Model):
     def __str__(self):
         return ("[{0}]{1} -> {2}(@{3})").format(self.recent_msg, self.sender, self.receiver, self.real_estate)
 
-
+#
+# class Chat(models.Model):
+#     real_estate = models.ForeignKey(Real_estate, on_delete=models.CASCADE, related_name="realestate")
+#     message = serializers.ListField(
+#         child = serializers.CharField(Message, on_delete=models.CASCADE, related_name="message")
+#     )
+# this can go in either server config, virtual host, directory or .htaccess WSGIPassAuthorization On

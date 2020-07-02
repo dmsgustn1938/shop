@@ -1,7 +1,7 @@
 .container{
+  background-image: url("/assets/static/main.png");
   margin:0;
   padding:0;
-  background-color: #ddd;
   height:100vh;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,7 @@
   background-position: center;
   display:flex;
   flex-wrap: wrap;
+  opacity: 0.7;
 }
 .loginlabel{
   margin:0;
@@ -17,12 +18,13 @@
   display:flex;
   justify-content: center;
   align-items: center;
+  font-size : 50px;
 }
 .loginlabel>h4{
   padding-top: 20vh;
   margin:0;
   font-size: 1.5em;
-  color: #ddd;
+  color: #FFFFFF;
   font-weight: 800;
 }
 .loginform{
@@ -36,10 +38,10 @@ input{
   height: 40px;
   margin-top: 10px;
   text-align: center;
-  font-size: 1em;
+  font-size: 20px;
   border-radius: 5px;
   border: none;
-  color: var(--gunmetal);
+  color: #000000;
 }
 input:hover{
   cursor: text;
@@ -54,11 +56,12 @@ button{
   height: 40px;
   border: none;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 20px;
+  color: #000000;
 }
 button.login{
   background-color: var(--pblue);
 }
 button.signup{
-  background-color: var(--tearose);
+  background-color: #FF0000;
 }

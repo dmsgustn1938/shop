@@ -1,12 +1,11 @@
 .background{
   height: 100vh;
   weight: 100%;
-  background-image: url("/assets/static/main.png");
+  background-image: url("/assets/static/1.png");
   background-size: cover;
   background-position: center;
   margin: 0;
   padding: 0;
-  opacity: 0.5;
 }
 .main-title{
   display: flex;
@@ -19,7 +18,7 @@ h1{
   padding: 0;
   margin: 0;
   color: #FFFFFF;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
   font-family: 'Lexend Deca';
   text-align: center;
@@ -35,13 +34,13 @@ p{
   text-align: center;
 }
 button{
-  height: 60px;
-  width: 180px;
+  height: 120px;
+  width: 350px;
   border: 3px solid;
   border-color: #FFFFFF;
   border-radius: 30px;
   background-color: #FFFFFF;
-  font-size: 25px;
+  font-size: 50px;
   color: #FF0000;
   font-weight: 700;
 }
