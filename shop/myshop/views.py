@@ -55,10 +55,16 @@ class Uniform(APIView):
     def get(self, request, format=None):
         queryset = Real_estate.objects.filter(category__name="유니폼")
 
-        ordered_queryset = Real_estate_order(request, queryset)
+        serializer = RS_Serializer(queryset, many=True)
 
-        serializer = RS_Serializer(ordered_queryset, many=True)
         return Response(serializer.data)
+
+    def post(self, request, format = None):
+        new_name = request.data['name']
+        new_detail = request.data['detail']
+        new_image = request.data['image']
+        new_price = request.data['price']
+        new_category = request.data['category']
 
 class Accessory(APIView):
     authentication_classes = []
@@ -68,10 +74,16 @@ class Accessory(APIView):
     def get(self, request, format=None):
         queryset = Real_estate.objects.filter(category__name="악세사리")
 
-        ordered_queryset = Real_estate_order(request, queryset)
+        serializer = RS_Serializer(queryset, many=True)
 
-        serializer = RS_Serializer(ordered_queryset, many=True)
         return Response(serializer.data)
+
+    def post(self, request, format=None):
+        new_name = request.data['name']
+        new_detail = request.data['detail']
+        new_image = request.data['image']
+        new_price = request.data['price']
+        new_category = request.data['category']
 
 class Wear(APIView):
     authentication_classes = []
@@ -80,10 +92,16 @@ class Wear(APIView):
     def get(self, request, format=None):
         queryset = Real_estate.objects.filter(category__name="의류")
 
-        ordered_queryset = Real_estate_order(request, queryset)
+        serializer = RS_Serializer(queryset, many=True)
 
-        serializer = RS_Serializer(ordered_queryset, many=True)
         return Response(serializer.data)
+
+    def post(self, request, format=None):
+        new_name = request.data['name']
+        new_detail = request.data['detail']
+        new_image = request.data['image']
+        new_price = request.data['price']
+        new_category = request.data['category']
 
 class Detail(APIView):
     authentication_classes = []
